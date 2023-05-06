@@ -1,8 +1,11 @@
 Hello, fellow code explorers and welcome to the first episode of 'Robert Robo-Workshop'! I'm your host, Robert Meisner, and I'm thrilled to invite you on a captivating journey as we build a mesmerizing spider robot from scratch! That's right, in this spectacular series, we'll be delving into the magical world of robotics, DIY, and hands-on workshops to create our very own eight-legged marvel.
 
-Now, if you think that I'm new to this realm, you're absolutely right! This is my first-ever robotics project from scratch, but worry not, because together we'll learn, grow, and overcome every challenge that comes our way. Throughout this series, we'll be diving into fascinating topics such as mechanical design, electronics, coding, and much more.
+Now, if you think that I'm new to this realm, you're absolutely right! This is my first time tackling such a complex robotics project from scratch, but worry not, because together we'll learn, grow, and overcome every challenge that comes our way. Throughout this series, we'll be diving into fascinating topics such as mechanical design, electronics, coding, and much more.
 
-Today's enchanting adventure begins with exploring the secrets of Inverse Kinematics, where we'll learn how our spider robot will move its legs to traverse its surroundings gracefully. Are you ready to embark on this fantastical voyage? If so, then buckle up, hit that like button, and let's get started!"
+Today's enchanting adventure begins with exploring the secrets of Inverse Kinematics, where we'll learn how our spider robot will move its legs to traverse its surroundings gracefully.
+ Are you ready to embark on this fantastical voyage? 
+ If so, then buckle up, hit that like button, and let's get started!"
+
 ## Resources
 
 This repository includes a [Jupyter Notebook](inverse_kinematics_code.ipynb) that contains the code and visualizations for the inverse kinematics tutorial. 
@@ -16,9 +19,10 @@ inverse kinematics calculations for a spider robot leg.
 We'll start by discussing the knowledge needed, such as trigonometry, 
 and then we'll dive into the implementation details with examples. 
 
-I was inspired by the MakeYourPet project. The MakeYourPet project is an excellent resource for anyone interested in building a hexapod robot at home using a 3D printer and some basic components. The creators of the project provide all the necessary software, STL files, and a detailed description of the electronic components required to assemble the hexapod. They also offer step-by-step instructions on how to put everything together and control the hexapod using an old Android phone.
+I was inspired by the MakeYourPet project. [The MakeYourPet](https://github.com/MakeYourPet/hexapod) project is an excellent resource for anyone interested in building a hexapod robot at home using a 3D printer and some basic components. The creators of the project provide all the necessary software, STL files, and a detailed description of the electronic components required to assemble the hexapod. They also offer step-by-step instructions on how to put everything together and control the hexapod using an old Android phone.
 
-The MakeYourPet project is perfect for those who want to build a hexapod without diving too deep into the intricacies of robotics. The community behind the project is supportive and can help you through any challenges you might encounter during the build process. If you're interested in building your own hexapod, I highly recommend checking out the MakeYourPet GitHub repository and joining their Discord server for guidance and support.
+The MakeYourPet project is ideal for those who want to build a hexapod without getting too deep into the complexities of robotics.
+The community behind the project is supportive and can help you through any challenges you might encounter during the build process. If you're interested in building your own hexapod, I highly recommend checking out the MakeYourPet GitHub repository and joining their Discord server for guidance and support.
 
 ## Prerequisites
 
@@ -108,9 +112,6 @@ By understanding the relationships between the coxa, femur, tibia, and the angle
 Alright, now let's have a look at the top view of the spider leg. 
 ![Top view of the spider leg](media/top_view.png)
 From this perspective, we can clearly see how the leg extends horizontally on the X-Y plane. 
-The coxa segment connects the leg to the spider's body, and its length can be represented as the distance between the body joint and the coxa joint. 
-By projecting the coxa length onto the X and Y axes, we can calculate the Xa and Ya values, which are the Coxa X-projection and Coxa Y-projection, respectively.
-
 From this top view, we can observe how the joint angle θ1 determines the leg's position in the X-Y plane. 
 Keep in mind that θ1 is the angle between the coxa and the X-axis. 
 The other joint angles, θ2 and θ3, which control the orientation of the femur and tibia segments, are not visible from the top view.
@@ -118,19 +119,23 @@ The other joint angles, θ2 and θ3, which control the orientation of the femur 
 
 In this view, we can also see some of the auxiliary variables we will use to calculate θ2 and θ3. 
 Specifically, Xa and Ya represent the projections of the coxa segment along the X and Y axes, respectively. 
-By calculating Xa and Ya, we can determine the starting point of the femur segment, which then helps us to calculate P, the projection of Xb on the X-axis.
+By calculating Xa and Ya, we can determine the starting point of the femur segment, which then helps us to calculate P, the projection of FEMUR and TIBIA on X/Y plane. 
+Xb and Yb are the horizontal and vertical distances from the end of the COXA segment to the target point (x, y) in the X/Y plane.
 
 Now let's move on to the side view, where we can better understand the roles of θ2, θ3, and the other variables.
 ![theta2  and 3 from the top view](media/side_view.png)
 In the side view, we can further analyze the relationship between θ2, θ3, and the leg segments, along with the auxiliary variables H, G, P, phi1, phi2, and phi3.
-First, let's look at H, G, and P. In this view, H is the length of the hypotenuse of a right-angled triangle formed by the femur and tibia segments. 
+First, let's look at H, G, and P. 
+
 G is the absolute value of the Z coordinate, representing the vertical distance between the coxa-femur joint and the target position. 
-P, as mentioned earlier, is the projection of Xb on the X-axis.
+P, as mentioned earlier, is the projection of FEMUR and TIBIA on X/Y plane.
+H is the length of the hypotenuse of a right-angled triangle formed by P and G. 
+
 
 Now let's discuss phi1, phi2, and phi3. 
 These angles are used as intermediate steps in calculating θ2 and θ3. 
-Phi1 is the angle formed by the femur, tibia, and H, while phi2 is the angle between the tibia and H. 
-Phi3 is the angle between the horizontal plane (formed by the X and Y axes) and the vertical plane containing the tibia segment.
+Phi1 is the angle formed by the femur, and H, while phi2 is the angle between the tibia and H. 
+Phi3 is the angle between the projection P on horizontal plane (formed by the X and Y axes) and H.
 
 I chose the angles phi1, phi2, and phi3 to assist in calculating the theta angles for our spider leg. These angles were specifically chosen because they help us break down the problem into manageable parts, using well-known trigonometric functions and rules.
 It's important to note that you can choose other angles or methods to calculate the theta angles, depending on your specific problem or the way you want to approach the inverse kinematics. The key is to find an approach that makes the calculations more straightforward and easier to understand.
