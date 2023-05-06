@@ -159,6 +159,8 @@ So, get ready to dive into the fascinating world of inverse kinematics and see h
 
 First, let's recall some basic trigonometric functions and rules:
 
+![Triangle hypotenuse,opposite,adjacent](media/adjacent-opposite-hypotenuse.png)
+
 **Sine (sin)** - The ratio of the length of the side opposite the angle to the length of the hypotenuse in a right-angled triangle.
 $$sin(\theta)=\frac{opposite}{hypotenuse}$$
 To calculate the actual angle using sine, you will need to use the inverse sine function, also known as arcsine ($sin^-1$ or asin). 
@@ -183,6 +185,8 @@ The formula for finding the angle using arctangent is:
 $$\theta = arctan(\frac{opposite}{adjacent})$$
 
 Now, let's discuss the **cosine rule**, also known as the **law of cosines**. The cosine rule applies to any triangle, not just right-angled triangles. 
+![Cosine Rule](media/Cosine-Rule.png)
+
 It relates the lengths of the sides of a triangle to the cosine of one of its angles. 
 Given a triangle with sides a, b, and c and angles A, B, and C opposite those sides, the cosine rule states:
 
@@ -192,9 +196,11 @@ $$a^2 = b^2 + c^2 - 2bc \cdot cos(A)$$
 
 These equations can be used to find the length of an unknown side when you know the lengths of the other two sides and the size of the angle between them. They can also be used to find the size of an angle when you know the lengths of all three sides.
 
-The Side-Side-Side (SSS) Triangle Rule applies to triangles where all three side lengths are known. 
+The Side-Side-Side (SSS) Triangle is the triangle where all three sides are known.
 In this case, you can use the cosine rule (law of cosines) to find the angles of the triangle. 
-Given a triangle with sides a, b, and c, you can find the angles A, B, and C as follows:
+Given a triangle with sides a, b, and c, you can find the angles (capital letter) A, B, and C as follows:
+
+![Side-Side-Side (SSS) Triangle Rule](media/Cosine-Rule.png)
 
 Use the cosine rule to find angle A:
 $$cos(A) = \frac{b^2 + c^2 - a^2}{2bc}$$
