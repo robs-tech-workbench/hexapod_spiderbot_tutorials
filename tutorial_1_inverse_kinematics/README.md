@@ -3,6 +3,11 @@ Hello, fellow code explorers and welcome to the first episode of 'Robert Robo-Wo
 Now, if you think that I'm new to this realm, you're absolutely right! This is my first-ever robotics project from scratch, but worry not, because together we'll learn, grow, and overcome every challenge that comes our way. Throughout this series, we'll be diving into fascinating topics such as mechanical design, electronics, coding, and much more.
 
 Today's enchanting adventure begins with exploring the secrets of Inverse Kinematics, where we'll learn how our spider robot will move its legs to traverse its surroundings gracefully. Are you ready to embark on this fantastical voyage? If so, then buckle up, hit that like button, and let's get started!"
+## Resources
+
+This repository includes a [Jupyter Notebook](inverse_kinematics_code.ipynb) that contains the code and visualizations for the inverse kinematics tutorial. 
+
+Additionally, a [Fusion 360 file](Hexapod_Leg_Fusion360.f3d) is provided for a 3D model of the hexapod leg, which can be used for visualization and further exploration of the problem.
 
 # Inverse Kinematics for a Spider Robot Leg
 
