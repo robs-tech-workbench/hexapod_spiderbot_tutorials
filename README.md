@@ -10,7 +10,7 @@ Welcome to the Hexapod Robotics Tutorials repository! This collection of tutoria
 - Electronics and Wiring - TBD
 - Servo Calibration - TBD
 - Programming the Hexapod: Basics - TBD
-- [Inverse Kinematics for Hexapod Legs](tutorial_1_inverse_kinematics/README.md)
+- [Inverse Kinematics for Hexapod Legs](tutorial_inverse_kinematics/README.md)
 - Forward Kinematics and Gait Generation - TBD
 - Control Algorithms and Optimization - TBD
 - Adding Sensors and Interactivity - TBD
