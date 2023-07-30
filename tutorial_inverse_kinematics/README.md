@@ -1,4 +1,11 @@
-Hello, fellow code explorers and welcome to the first episode of 'Robert Robo-Workshop'! I'm your host, Robert Meisner, and I'm thrilled to invite you on a captivating journey as we build a mesmerizing spider robot from scratch! That's right, in this spectacular series, we'll be delving into the magical world of robotics, DIY, and hands-on workshops to create our very own eight-legged marvel.
+> **Disclaimer:** This tutorial is part of a comprehensive series that I've created to guide you through the process of building a spider robot. Each tutorial in the series is designed to cover a specific aspect of the project, providing detailed instructions and insights to help you understand and replicate the steps.
+> 
+> You can find the entire series [here](../README.md). I encourage you to explore all the tutorials in the series to gain a complete understanding of the project. Whether you're following along to build your own spider robot, or simply interested in learning more about robotics, I hope you find these resources helpful and informative. Happy building!"
+
+
+## Inverse Kinematics for Spider Robot Legs
+
+Hello, fellow code explorers and welcome to the first episode of 'Robert Robo-Workshop'! I'm your host, Robert Meisner, and I'm thrilled to invite you on a captivating journey as we build a mesmerizing spider robot from scratch! 
 
 Now, if you think that I'm new to this realm, you're absolutely right! This is my first time tackling such a complex robotics project from scratch, but worry not, because together we'll learn, grow, and overcome every challenge that comes our way. Throughout this series, we'll be diving into fascinating topics such as mechanical design, electronics, coding, and much more.
 
@@ -11,6 +18,7 @@ Today's enchanting adventure begins with exploring the secrets of Inverse Kinema
 This repository includes a [Jupyter Notebook](inverse_kinematics_code.ipynb) that contains the code and visualizations for the inverse kinematics tutorial. 
 
 Additionally, a [Fusion 360 file](Hexapod_Leg_Fusion360.f3d) is provided for a 3D model of the hexapod leg, which can be used for visualization and further exploration of the problem.
+
 
 # Inverse Kinematics for a Spider Robot Leg
 
