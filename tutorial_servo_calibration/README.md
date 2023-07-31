@@ -7,6 +7,18 @@ This tutorial guides you through the process of calibrating a servo using a serv
 1. A servo motor
 2. A servo tester
 3. A power supply or batteries appropriate for your servo tester
+4. A 3D model for precise calibration (optional)
+
+
+## Resources
+
+This repository includes a [Jupyter Notebook](servo_calibration.ipynb) that contains the code and visualizations. 
+
+### 3D Model for Precise Calibration
+
+To make the calibration process easier and more precise, I have prepared a 3D model specifically designed for popular servo sizes. This model includes template angles at -90, -45, 0, 45, and 90 degrees, as well as a gauge that you can place on the moving outer shaft of the servo.
+
+By lining up the gauge with the template angles, you can get exact pulse width readings for those specific angles. This not only simplifies the process but also ensures that you achieve an accurate and consistent calibration across different servos. You can download and 3D print this model [here](LINK_TO_3D_MODEL).
 
 ## Steps
 
@@ -19,7 +31,7 @@ This tutorial guides you through the process of calibrating a servo using a serv
    - **Negative and Positive 90 Degrees:** Slowly decrease the pulse width from 1500 μs until the servo moves to what you want to consider as -90 degrees. Note down the pulse width at this point. Then, increase the pulse width from 1500 μs until the servo reaches +90 degrees and note down the pulse width.
    - **Full Range:** By alternating the pulse width from minimum (for -90 degrees) to maximum (for +90 degrees), you can see the full range of motion of the servo. 
 
-## Python Plotting 
+## Important: Relationship between pulse width and servo angle
 
 For visualizing the relationship between pulse width and servo angle, a Python script can be found [in this Jupyter notebook](servo_calibration.ipynb).
 
