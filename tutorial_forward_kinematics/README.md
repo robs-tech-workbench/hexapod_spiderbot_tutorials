@@ -58,10 +58,18 @@ The `forwardKinematicsNaive` method calculates the position of each joint in the
 
 7. `Xc=cos(theta1)*P1` and `Yc=sin(theta1)*P1`: These lines calculate the x and y coordinates of the femur-tibia joint (or "knee" of the spider leg). The x and y coordinates are calculated by multiplying `P1` (the horizontal component of the femur length) by the cosine and sine of the first joint angle (`theta1`), respectively.
 
-The next set of lines calculate the x, y, and z coordinates for the tibia-tip joint. The calculations involve more trigonometry and geometry, similar to the previous steps.
+The next set of lines calculate the `x`, `y`, and `z` coordinates for the tibia-tip joint, which is the endpoint of the leg. The calculations involve trigonometric functions and geometric relationships to determine the position of this joint based on the angles of the other joints. 
+
+First, we calculate `H`, which represents the straight-line distance from the femur-tibia joint to the tibia-tip joint. 
+This is done using the Law of Cosines, with the angle being the difference between 180 degrees and `theta3`. 
+The `phi1`, `phi2`, and `phi3` values are auxiliary angles used to compute the position of the tibia-tip joint. 
+
+Next, `Pp` represents the horizontal projection of the tibia-tip joint on the plane of the femur. 
+
+`P2` is then calculated as the difference between `Pp` and `P1` (the horizontal projection of the femur-tibia joint). 
+
+The final `x`, `y`, and `z` coordinates of the tibia-tip joint (`Xb`, `Yb`, and `G1`) are then computed using these auxiliary values.
 
 The final output of the method is a list of joint locations, with each location represented by a list of x, y, and z coordinates.
 
-In the next tutorial, we will delve into how we can use this forward kinematics method for motion planning and control in our spider robot. Stay tuned!
-
-Remember, the beauty of robotics lies not just in the final product, but in the intricate processes that bring the robot to life. Happy coding!
+>Remember, the beauty of robotics lies not just in the final product, but in the intricate processes that bring the robot to life. Happy coding!

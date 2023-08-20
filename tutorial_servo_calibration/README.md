@@ -1,3 +1,8 @@
+> **Disclaimer:** This tutorial is part of a comprehensive series that I've created to guide you through the process of building a spider robot. Each tutorial in the series is designed to cover a specific aspect of the project, providing detailed instructions and insights to help you understand and replicate the steps.
+> 
+> You can find the entire series [here](../README.md). I encourage you to explore all the tutorials in the series to gain a complete understanding of the project. Whether you're a beginner or an expert, I hope you find these resources helpful and informative. Happy building!
+
+
 # Servo Calibration with a Servo Tester
 
 This tutorial guides you through the process of calibrating a servo using a servo tester. 
@@ -25,7 +30,7 @@ By lining up the gauge with the template angles, you can get exact pulse width r
 
 ## Steps
 
-1. **Connect Servo to Servo Tester:** Plug the servo connector into the servo tester. The order usually is Signal-Positive-Negative (orange-red-black or yellow-red-brown).
+1. **Connect Servo to Servo Tester:** Plug the servo connector into the servo tester. The order usually is Signal-Positive-Negative (orange or white or yellow - red - black or brown).
 
 2. **Power up the Servo Tester:** Connect your power supply or battery to the servo tester. Ensure you use the right voltage and current rating for your servo.
 
