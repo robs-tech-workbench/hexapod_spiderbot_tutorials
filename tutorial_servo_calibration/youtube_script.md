@@ -67,7 +67,12 @@ For the model I'm using, the HJ Digital Servo Tester, the first pins are for con
 Connect the positive wire of your power supply to the '+' pin and the negative wire to the '-' pin.
 
 With everything connected and turned on, we're ready to start the adjusting and testing.
-The servo is set to its middle position, then the pulse widths for -90 and +90 degrees are found and noted.
+Let's calibrate our servo. 
+Set it to the middle, or 0 degrees. 
+Then, move it to -90 degrees and note the pulse width. 
+Do the same for +90 degrees. Keep in mind, these angles, -90 and +90, are just examples; 
+you can choose others based on your needs. 
+Remember these pulse widths; they help control the servo accurately in future projects.
 The last step is to check the full movement of the servo.
 
 
