@@ -2,7 +2,10 @@
 
 [ON SCREEN: Preview of the spider robot in action]
 
-Ever seen a spider robot in action? If not, you're in for a treat. In this series, we're not just watching one—we're building it! Using materials that are easy to find, we're crafting a DIY spider robot, and I'm inviting you to join me on this adventure.
+Ever seen a spider robot in action?
+ If not, get ready for some fun. 
+ In this series, we're not just watching one—we're building it! 
+ Using materials that are easy to find, we're crafting a DIY spider robot, and I'm inviting you to join me on this adventure.
 
 Welcome to our shared journey of discovery and innovation.
 
