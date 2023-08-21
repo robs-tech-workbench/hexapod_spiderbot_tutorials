@@ -3,20 +3,12 @@
 [ON SCREEN: Preview of the spider robot in action]
 
 Ever seen a spider robot in action?
- If not, get ready for some fun. 
- In this series, we're not just watching one—we're building it! 
- Using materials that are easy to find, we're crafting a DIY spider robot, and I'm inviting you to join me on this adventure.
-
-Welcome to our shared journey of discovery and innovation.
-
-Now, a small confession: I'm learning as I go. Some challenges still puzzle me, and the beauty of this series is that we'll tackle them together, step by step. It's the essence of DIY—learning, iterating, and improving.
-
+Well, in this series, we're rolling up our sleeves and crafting our very own!
+Using materials that are easy to find, we're crafting a DIY spider robot, and I'm inviting you to join me on this adventure.
+Now, a small confession: I'm learning as I go. Some challenges still puzzle me, and the beauty of this series is that we'll tackle them together, step by step. I believe It's the essence of DIY—learning, iterating, and improving.
 If you're just tuning in, I suggest starting from the beginning to get the full experience. [ON SCREEN: Link to the playlist]
-
 Throughout this series, I'll break down each part of the project, ensuring you can follow along with ease and maybe even kickstart your own robotic creation.
-
-I aim to keep these sessions concise and impactful. However, if anything zooms by too quickly, don't hesitate to pause or go back. Remember, it's about the journey, not the speed.
-
+I aim to keep these sessions short and to the point. However, if anything feels a bit rushed or unclear, don't hesitate to pause or rewind. Additionally, I've provided supplementary documentation and Jupyter notebooks to help reinforce and expand on what I cover. Remember, it's about the journey and understanding, not the pace.
 For those curious about the tools, you'll find all the details in the description below. Join me, and let's embark on this exciting DIY voyage together!
 
 
