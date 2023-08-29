@@ -30,6 +30,6 @@ Wrapping up with **Step 5**: Now for the fun part! With the controller's signals
 
 In short, using a game controller to guide a robot mixes tech know-how with fun. A match made in heaven!
 
-As we end today's session, a quick note: your likes and subscriptions push us to do more. Join in, learn, and let's explore tech together.
+As we end today's session, a quick note: your likes and subscriptions push me to do more. Join in, learn, and let's explore tech together.
 
 Until next time, keep learning and having fun!

@@ -96,7 +96,7 @@ I went for USB powered Soldering iron. It's light and you can use it in the fiel
 - Digital Servo/ESC Consistency Tester 
 You will need to 
 
-3D printer i woned fuw 3d printers . Just go through reviews , i beleive for project like this additive as its cheap , easy to and relatively safe and you don't need that level of detail offered by . I'm sure you can go for printer as well.
+3D printer i woned fuw 3d printers . Just go through reviews , i beleive for project like this additive/FDM as its cheap , easy to use and relatively safe and you don't need that level of detail offered by SLA. I'm sure you can go for printer as well.
 I used the one that has very good value to the price relation ANYCUBIC Kobra Go 3D
 
 - Loctite 222 or 243 Thread Locker, 222 is enough 
@@ -108,7 +108,7 @@ i was looking for few options and i found through one of the users called "" act
 After first few prints and puting the first leg together i noticed  few drawbacks of his solution.
 First of he did not use bearings so i decided to .
 His robot did not have any body or enclosure protecting so first i've develoepd lttle box and decided  to create 3 parts.
-Design lets you to build quadruped or hexapod robot. To cut on costs. But bear in mind quadruped robot will be slower (can move one leg at the time) and it's much harder to actiually programme stable gait.
+Design lets you to build quadruped or hexapod robot. To cut on costs. But bear in mind quadruped robot will be slower (can move one leg at the time) and it's much harder to actiually programme stable gait as legs are not always on the opposite sides of the robot and center of what? might be far from robot's center of mass at every step.
 
 So as you can see that was very iterative process.
 I've never had any extensive CAD experience and even thou i was able to create quite complicated designs. I advise you to download Fusion 360 and try it yourself. 

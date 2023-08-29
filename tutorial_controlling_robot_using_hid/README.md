@@ -15,7 +15,7 @@ The tutorial covers the following steps:
 
 ## Resources
 
-This repository includes a [Jupyter Notebook](forward_kinematics.ipynb) that contains the code and visualizations. 
+This repository includes a [Jupyter Notebook](controlling_robot_using_hid.ipynb) that contains the code and visualizations. 
 
 ### Step 1: Listing all HID devices
 
