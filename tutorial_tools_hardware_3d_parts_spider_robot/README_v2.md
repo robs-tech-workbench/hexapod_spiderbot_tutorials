@@ -41,9 +41,10 @@ Next, I decided to replace the bolt-like joint design with one that utilizes bea
 
 ![Bearings, leg joints, coxa](image/../media/coxa_arrow.png)
 ![Bearings, leg joints, femur](image/../media/femur_arrow.png)
+![Bearings, leg joints, femur](image/../media/servo_back_arrow.png)
 
 Since I started with a quadruped robot, balancing it during walking was a significant challenge. After some tests, I discovered that the robot could benefit from a larger range of movement. To achieve this, I needed to extend the length of the leg's tibia.
-![Spider robot, longer tibia](Your-Image-Link-Here)
+![Spider robot, longer tibia](media/tibia_arrow.png)
 
 Finally, I made some holes in the body to accommodate the on/off switch, some LCD screens, and the cooling fan.
 
@@ -160,8 +161,7 @@ For this project, it's crucial to select the right screws to ensure durability a
 You will need a lot of zip ties to keep all your cables under control. Zip ties are not only an inexpensive but also an effective solution for managing the maze of wires that power the servos, sensors, and the central processing unit. Opt for a variety pack that includes ties of multiple lengths and widths, as you'll find various applications for each size. High-quality zip ties are recommended for long-lasting durability, especially since the cables will often be in motion, causing wear and tear on the ties themselves.
 ![Fasteners/Zip Ties](media/fasteners_zip_ties.jpg)
 ## Other Tools
-- **Scalpel Knife:** After 3D printing, it's common to have some imperfections or excess material on your parts. A Scalpel Knife is an excellent tool for cleaning up these minor flaws. It allows for precise cuts and can easily remove brims, supports, or any other unwanted material, leaving you with a cleaner, more professional-looking component.
-![Scalpel Knife](Your-Image-Link-Here)
+- **Scalpel Knife/Box cutter:** After 3D printing, it's common to have some imperfections or excess material on your parts. A Scalpel Knife is an excellent tool for cleaning up these minor flaws. It allows for precise cuts and can easily remove brims, supports, or any other unwanted material, leaving you with a cleaner, more professional-looking component.
 [Scalpel Knife on Aliexpress](https://www.aliexpress.com/item/1005004898484210.html)
 
 - **Soldering Set:** A USB-powered soldering iron is portable and can be used in field adjustments. 
@@ -169,11 +169,11 @@ Additionally, a soldering third arm can be incredibly helpful for holding compon
 ![Soldering Set](media/soldering_set.jpg)
 [USB-powered soldering iron on Aliexpress]()
 - **Mini Cordless Precision Electric Screwdriver:** Given the hundreds of screws you'll be working with, this tool is indispensable.
-![Soldering Set](Your-Image-Link-Here)
+![Mini Cordless Precision Electric Screwdriver](media/cordless_screwdriver.png)
 - **Digital Servo/ESC Consistency Tester:** This is crucial for calibrating and testing your servo motors.
-![Digital Servo/ESC Consistency Tester](Your-Image-Link-Here)
+![Digital Servo/ESC Consistency Tester](media/servo_tester.png)
 - **Multimeter:** It's highly advisable to use a multimeter during the setup and testing phases. A multimeter will allow you to accurately measure voltage, current, and resistance, ensuring that all components, including the Servo Controller or Raspberry, are operating within their specified ranges. This is crucial for both the safety and the successful execution of your project.
-![Multimeter](Your-Image-Link-Here)
+![Multimeter](media/multimeter.png)
 ---
 
 
