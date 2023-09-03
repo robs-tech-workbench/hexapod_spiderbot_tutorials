@@ -6,7 +6,7 @@ Welcome to the Spider Robot Tutorials repository! This collection of tutorials i
 
 ## Table of Contents
 - Introduction to Hexapod Robotics
-- Selecting Tools, Hardware Components & Designing 3D Printed Parts - TBD
+- [Tools, Hardware Components, and 3D Printed Parts](tutorial_tools_hardware_3d_parts_spider_robot/README.md)
 - [Servo Calibration](tutorial_servo_calibration/README.md)
 - [Controlling Your Robot Using USB or Bluetooth HID Devices]()
 - Programming the Hexapod: Basics - TBD
