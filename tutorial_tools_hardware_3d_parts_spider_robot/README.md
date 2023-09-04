@@ -50,7 +50,7 @@ Since I started with a quadruped robot, balancing it during walking was a signif
 
 Finally, I made some holes in the body to accommodate the on/off switch, some LCD screens, and the cooling fan.
 
-![Alt text](media/robot.png)
+![Spider robot](media/robot.png)
 
 **The repository with the most up-to-date design can be found here: [https://github.com/robert-s-workshop/hexapod_spiderbot_model](https://github.com/robert-s-workshop/hexapod_spiderbot_model)**
 
@@ -60,9 +60,11 @@ Finally, I made some holes in the body to accommodate the on/off switch, some LC
 
 When building a spider robot, the type of servo motor you choose is paramount. Coreless high-speed, high-torque servo motors with a rating of 35kg+ are recommended for this project. However, brushless motors with positional feedback provide greater accuracy and longevity, though they come with a hefty price tag. 
 
+![Servos](media/servos.png)
+
 When selecting a servo motor for your project, it's crucial to consider the range of motion you'll need. Servo motors commonly come in ranges like 180° or 270°. A servo with a wider range (e.g., 270°) will offer more flexibility in movement but may have a lower resolution, meaning less precise control over small movements. On the other hand, a 180° servo might offer higher resolution, allowing for more precise positioning but with a limited range. Choose a servo that best fits the specific requirements of your project for optimal performance.
-[Servo Motors i have used on Aliexpress](Your-Link-Link-Here)
-![Servo Motors](Your-Image-Link-Here)
+[Servo Motors i have used on Aliexpress](https://pl.aliexpress.com/item/33010787343.html)
+
 
 ### Servo Mounting: Metal 25T Servo Arm Round Type
 
@@ -73,7 +75,9 @@ For robust and reliable servo mounting, I recommend using Metal Servos Mount Alu
 
 ### Micro Switches for Leg Sensors
 
-Touch-sensitive micro switches act as leg sensors, providing crucial input for the robot's movement algorithms. These can be easily procured from [Amazon](https://www.amazon.co.uk/gp/product/B07YDFH7H3).
+Touch-sensitive micro switches act as leg sensors, providing crucial input for the robot's movement algorithms. 
+These can be easily procured from [Amazon](https://www.amazon.co.uk/gp/product/B07YDFH7H3).
+![Micro Switches for Leg Sensors](media/micro_switch.png)
 
 ### Servo Controller 
 
@@ -92,6 +96,8 @@ The Servo 2040 - 18 Channel Servo Controller is the backbone for servo operation
 
 A Raspberry Pi 4 Model B or a similar board that supports a Linux-based OS and Python environment is ideal for executing the robot's complex logic. This includes gait algorithms, sensor inputs, and communication with the Gamepad controller.
 
+![Raspberry](media/raspberry.png)
+
 ### Servo Extension Cables 
 
 Investing in both long (30cm) and short (10-15cm) extension cables saves you from having to engage in tedious cable management. 
@@ -106,8 +112,7 @@ Effective cable management is crucial for both aesthetics and functionality. I r
 
 [Braided Cable Sleeve PET Self Closing on Aliexpress](https://www.aliexpress.com/item/4000279970497.html)
 
-![Braided Cable Sleeve](Your-Image-Link-Here)
-
+![Braided Cable Sleeve](media/braided_cable_sleeve.png)
 
 ### Bearings
 
@@ -117,14 +122,14 @@ For smooth mechanical performance, bearings are an essential part of the 3D prin
 ### Power Control: 12V Illuminated LED Toggle Switch Aircraft Missile Flip
 
 To easily control the power supply to the robot, I've used a 12V Illuminated LED Toggle Switch Aircraft Missile Flip. This toggle switch not only serves the functional purpose of turning the robot on and off but also adds a bit of aesthetic appeal with its illuminated LED and aircraft missile flip design.
-[12V Illuminated LED Toggle Switch Aircraft Missile Flip](Your-Link-Here)
-![12V Illuminated LED Toggle Switch Aircraft Missile Flip](image.png)
+![12V Illuminated LED Toggle Switch Aircraft Missile Flip](media/power_switch.png)
 
 ### Power Source: 2S Lipo Battery
 
 The Zeee 2S Lipo Battery 6200mAh 7.4V 60C is an excellent fit for this project, easily fitting into the robot's battery compartment. I decided to solder an XT30 plug for compatibility with the rest of my build. 
 
 [The Zeee 2S Lipo Battery 6200mAh 7.4V 60C on amazon UK](https://www.amazon.co.uk/gp/product/B07YD6282M)
+![Alt text](media/battery.png)
 
 ### Wires: Selecting the Right Gauge and Insulation
 
@@ -135,13 +140,14 @@ Choosing the correct wires is essential for both the functionality and safety of
 
 To convert the 7.4V from your battery to a stable 5V for the Raspberry Pi, a step-down buck module is essential. Opt for one that can deliver at least 3A of current. 
 [2A 5V Step Down Buck Module I have used on Aliexpress (you might need 3A)](https://www.aliexpress.com/item/4000084079149.html)
-
+![5V Step Down Buck Module](media/step_down.png)
 ### USB Cables
 
 Two types of USB cables are needed:
 - A short USB-A to USB-C for connecting the Raspberry Pi to the Servo Controller. 
 [A short USB-A to USB-C on Aliepxress](https://www.aliexpress.com/item/1005005240135902.html)
 - A long USB-A to USB-C for development purposes, allowing seamless interfacing between your laptop and the robot. 
+![USB Cable](media/usb.png)
 
 ---
 
