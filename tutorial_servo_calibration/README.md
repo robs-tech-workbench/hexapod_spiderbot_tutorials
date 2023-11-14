@@ -26,7 +26,7 @@ To make the calibration process easier and more precise, I have prepared a 3D mo
 ![Servo calibration](media/servo_calibration.png)
 
 By lining up the gauge with the template angles, you can get exact pulse width readings for those specific angles. This not only simplifies the process but also ensures that you achieve an accurate and consistent calibration across different servos. 
-**You can download and 3D print this model [here](LINK_TO_3D_MODEL).**
+**You can download and 3D print this model [here](https://www.thingiverse.com/thing:6191213).**
 
 ## Steps
 
