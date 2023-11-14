@@ -36,40 +36,102 @@ These concepts allow us to calculate the lengths of sides in a right triangle wh
 
 Let's get started!
 
-## The `forwardKinematicsNaive` Method: A Deep Dive
+# The `forward_kinematics_naive` Method: A Deep Dive
 
-The `forwardKinematicsNaive` method calculates the position of each joint in the robot's leg based on the current angles of the joints. Here's how it works, step by step:
+In this tutorial, we'll dissect the `forward_kinematics_naive` method from the `SpiderLeg` class in our spider robot project. This method is pivotal for calculating the positions of the leg's joints based on the joint angles. Here's a detailed breakdown of each step, complete with trigonometry explanations and inline code snippets.
 
-1. `if angles is None:` This line checks whether any joint angles were provided as input to the method. If not, it will use the current angles of the leg.
 
-2. `angles=[(self.theta1),(self.theta2),(self.theta3)]`: Here, the current angles of the leg are fetched from the `SpiderLeg` object and stored in the variable `angles`.
+1. **Angle Conversion**:
+   The method begins by converting the joint angles from degrees to radians. This conversion is essential as trigonometric functions in Python's math library require angles in radians.
 
-3. `theta1,theta2,theta3=radians(angles[0]),radians(angles[1]),radians(angles[2])`: The angles are then converted from degrees to radians to be used in subsequent calculations. This is because trigonometric functions in Python expect the input in radians.
+   ```python
+   theta1, theta2, theta3 = map(math.radians, self.get_angles())
+   ```
 
-4. `Xa = self.COXA*cos((theta1))` and `Ya = self.COXA*sin((theta1))`: These lines calculate the x and y coordinates of the joint between the coxa (hip) and femur (thigh) segments of the leg. 
+2. **Coxa-Femur Joint Calculation**:
+   - `Xa` and `Ya` determine the x and y coordinates of the coxa-femur joint (the hip joint). They are calculated using the cosine and sine of `theta1`, respectively, multiplied by the length of the coxa (`self.COXA`). Cosine gives the horizontal component, and sine provides the vertical component.
 
-   The `Xa` coordinate is calculated by multiplying the length of the coxa (`self.COXA`) by the cosine of the first joint angle (`theta1`). This gives the horizontal distance from the origin (base of the leg) to the hip joint.
-   
-   The `Ya` coordinate is calculated by multiplying the length of the coxa (`self.COXA`) by the sine of the first joint angle (`theta1`). This gives the vertical distance from the origin to the hip joint.
+     ```python
+     Xa = self.COXA * math.cos(theta1)
+     Ya = self.COXA * math.sin(theta1)
+     ```
 
-5. `G2=sin(theta2)*self.FEMUR`: This line calculates the vertical component of the length of the femur segment. It's obtained by multiplying the length of the femur (`self.FEMUR`) by the sine of the second joint angle (`theta2`).
+3. **Femur Segment Calculations**:
+   - The vertical component `G2` of the femur length is calculated by the femur length (`self.FEMUR`) multiplied by the sine of `theta2`. This gives the vertical displacement.
+   - The horizontal component `P1` is found by multiplying the femur length by the cosine of `theta2`. This gives the horizontal displacement.
 
-6. `P1=cos(theta2)*self.FEMUR`: Here, `P1` is the horizontal component of the length of the femur segment. It's calculated by multiplying the length of the femur (`self.FEMUR`) by the cosine of the second joint angle (`theta2`).
+     ```python
+     G2 = math.sin(theta2) * self.FEMUR
+     P1 = math.cos(theta2) * self.FEMUR
+     ```
 
-7. `Xc=cos(theta1)*P1` and `Yc=sin(theta1)*P1`: These lines calculate the x and y coordinates of the femur-tibia joint (or "knee" of the spider leg). The x and y coordinates are calculated by multiplying `P1` (the horizontal component of the femur length) by the cosine and sine of the first joint angle (`theta1`), respectively.
+4. **Femur-Tibia Joint Calculation**:
+   - `Xc` and `Yc` are the x and y coordinates of the femur-tibia joint (knee joint), computed by multiplying `P1` with the cosine and sine of `theta1`.
 
-The next set of lines calculate the `x`, `y`, and `z` coordinates for the tibia-tip joint, which is the endpoint of the leg. The calculations involve trigonometric functions and geometric relationships to determine the position of this joint based on the angles of the other joints. 
+     ```python
+     Xc = math.cos(theta1) * P1
+     Yc = math.sin(theta1) * P1
+     ```
 
-First, we calculate `H`, which represents the straight-line distance from the femur-tibia joint to the tibia-tip joint. 
-This is done using the Law of Cosines, with the angle being the difference between 180 degrees and `theta3`. 
-The `phi1`, `phi2`, and `phi3` values are auxiliary angles used to compute the position of the tibia-tip joint. 
+5. **Tibia-Tip Joint Calculation**:
+   - This step involves calculating the position of the tibia-tip joint (foot of the leg) using a series of trigonometric calculations.
+   - `H` is the straight-line distance from the femur-tibia joint to the tibia-tip joint, calculated using the Law of Cosines.
 
-Next, `Pp` represents the horizontal projection of the tibia-tip joint on the plane of the femur. 
+     ```python
+     H = math.sqrt(self.TIBIA**2 + self.FEMUR**2 - 2*self.TIBIA*self.FEMUR*math.cos(math.radians(180) - theta3))
+     ```
 
-`P2` is then calculated as the difference between `Pp` and `P1` (the horizontal projection of the femur-tibia joint). 
+   - `phi1` is calculated using the Law of Cosines again, to find the angle at the femur-tibia joint.
 
-The final `x`, `y`, and `z` coordinates of the tibia-tip joint (`Xb`, `Yb`, and `G1`) are then computed using these auxiliary values.
+     ```python
+     phi1 = math.acos((self.FEMUR**2 + H**2 - self.TIBIA**2) / (2*self.FEMUR*H))
+     ```
 
-The final output of the method is a list of joint locations, with each location represented by a list of x, y, and z coordinates.
+   - `phi2` is the angle at the tibia-tip joint. It's calculated by subtracting `phi1` and the external angle \( 180^\circ - \theta3 \) from 180 degrees.
+   - `phi3` is an auxiliary angle, used to find the horizontal and vertical projections. It's calculated by subtracting `theta2` from `phi1`.
+
+     ```python
+     phi2 = math.radians(180) - (math.radians(180) - theta3) - phi1
+     phi3 = phi1 - theta2
+     ```
+
+   - `Pp` is the horizontal projection of the tibia-tip joint on the plane of the femur. It is calculated using the cosine of `phi3` multiplied by `H`.
+
+     ```python
+     Pp = math.cos(phi3) * H
+     ```
+
+   - `P2` is the horizontal distance between the femur-tibia joint and the tibia-tip joint. It is calculated as the difference between `Pp` and `P1`.
+
+     ```
+     P2 = Pp - P1
+     ```
+
+   - `Yb` and `Xb` are the x and y coordinates of the tibia-tip joint, calculated by multiplying the sine and cosine of `theta1` by `Pp`, respectively.
+
+     ```python
+     Yb = math.sin(theta1) * Pp
+     Xb = math.cos(theta1) * Pp
+     ```
+
+   - `G1` is the vertical component (z-coordinate) of the tibia-tip joint. It is calculated using the sine of `phi3` multiplied by `H`. The result is negated as the z-axis might be defined downwards in the robot's coordinate system.
+
+     ```python
+     G1 = math.sin(phi3) * H
+     G1 = -G1
+     ```
+
+6. **Joint Locations List**:
+   - The method concludes by creating a list of joint locations. Each joint location is represented by a set of x, y, and z coordinates. This list includes the positions of the base joint, coxa-femur joint, femur-tibia joint, and the tip of the leg.
+
+     ```python
+     joint_locations = [
+         [0, 0, 0],  # Base joint
+         [Xa, Ya, 0],  # Coxa-femur joint
+         [Xa + Xc, Ya + Yc, G2],  # Femur-tibia joint
+         [Xa + Xb, Ya + Yb, G1]  # Tip of the leg
+     ]
+     ```
+
 
 >Remember, the beauty of robotics lies not just in the final product, but in the intricate processes that bring the robot to life. Happy coding!
