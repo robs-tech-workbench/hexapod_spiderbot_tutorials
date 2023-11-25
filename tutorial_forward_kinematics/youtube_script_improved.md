@@ -90,6 +90,6 @@ The Law of Cosines helps us relate the lengths of the sides of a triangle to the
 
 [**Outro Music**]
 
-**Narrator:** "We hope this tutorial lit up your path in the fascinating world of robotics. Stay tuned for more and happy coding!"
+**Narrator:** "I hope this tutorial lit up your path in the fascinating world of robotics. Stay tuned for more and happy coding!"
 
 [**Visual: End Screen with Series Title and Call-to-Action**]
