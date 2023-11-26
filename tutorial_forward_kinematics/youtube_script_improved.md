@@ -33,11 +33,31 @@ The Law of Cosines helps us relate the lengths of the sides of a triangle to the
 
 [**Visual: Code Snippets and Leg Diagrams**]
 
-**Narrator:** "We start by converting the angles of our robot's joints from degrees to radians. Why radians? It's the language our Python math library speaks for trigonometry."
+**Narrator:** "We start by converting the angles of our robot's joints from degrees to radians. We use radians in these calculations because they provide a more natural way to describe angles in terms of their relation to the circle, which is essential in robotic movements."
 
 [**Code Example: Angle Conversion**]
 
 **Narrator:** "Next, we calculate the positions of each joint. Using sine and cosine, we find the x and y coordinates for our robot's hip joint, knee joint, and the foot."
+
+[Visual: Highlighted Code Snippet]
+
+Narrator: "First, we determine the x and y coordinates of the coxa-femur joint. This joint acts like the hip in a human leg, connecting the body to the upper leg segment."
+
+[Visual: Illustration of Coxa-Femur Joint with Coordinates]
+
+Narrator: "Using trigonometry, we calculate 'Xa', the horizontal position, and 'Ya', the vertical position, of this joint. We multiply the length of the coxa segment by the cosine and sine of the hip joint angle, respectively. This gives us precise coordinates based on our joint's current angle."
+
+[Visual: Animated Calculation of Xa and Ya]
+
+Narrator: "Next, we focus on the femur segment, the upper leg of our robot. We calculate its vertical and horizontal components. The vertical component, 'G2', is found by multiplying the femur's length by the sine of its angle, representing how high or low the knee will be."
+
+[Visual: Illustration of Femur with Vertical Component]
+
+Narrator: "Similarly, the horizontal component, 'P1', is the femur's length times the cosine of its angle. This tells us how far forward or backward the knee extends from the hip joint."
+
+[Visual: Animated Calculation of G2 and P1]
+
+Narrator: "Finally, we calculate the x and y coordinates of the femur-tibia joint. This joint, akin to a human knee, connects the upper and lower parts of the leg. By applying the horizontal component 'P1' to our previous calculations, we can pinpoint this joint's exact location in space."
 
 [**Visual: Detailed Illustration of Spider Robot's Leg Joints**]
 
@@ -49,7 +69,7 @@ The Law of Cosines helps us relate the lengths of the sides of a triangle to the
 
 [**Visual: Equation of the Law of Cosines**]
 
-**Narrator:** "Here's the formula: The square of the length of the side we want to find is equal to the sum of the squares of the femur and tibia lengths, minus twice their product multiplied by the cosine of the knee angle. Mathematically, it looks like this: \( H^2 = \text{FEMUR}^2 + \text{TIBIA}^2 - 2 \times \text{FEMUR} \times \text{TIBIA} \times \cos(\theta3) \)."
+**Narrator:** "Here's the formula: The square of the length of the side we want to find is equal to the sum of the squares of the femur and tibia lengths, minus twice their product multiplied by the cosine of the knee angle. "
 
 [**Visual: Calculation Steps for H**]
 
@@ -69,7 +89,7 @@ The Law of Cosines helps us relate the lengths of the sides of a triangle to the
 
 [**Visual: Calculation of phi2 and phi3**]
 
-**Narrator:** "Next, we calculate 'phi2', the angle at the foot joint. It's found by subtracting 'phi1' and the external angle at the knee from 180 degrees. 'phi3', an auxiliary angle, is then determined by subtracting the original knee joint angle from 'phi1'. These angles are crucial for determining the position of the foot."
+**Narrator:** "Next, we calculate 'phi2', the angle at the foot joint. To calculate 'phi2', we determine the angle between the femur and the ground. This is done by subtracting the sum of 'phi1' and the angle of the tibia relative to the ground from 180 degrees. This provides us the angle at the foot joint. 'phi3', an auxiliary angle, is then determined by subtracting the original knee joint angle from 'phi1'. These angles are crucial for determining the position of the foot."
 
 [**Visual: Horizontal and Vertical Projections of H**]
 
@@ -83,8 +103,25 @@ The Law of Cosines helps us relate the lengths of the sides of a triangle to the
 
 **Narrator:** "Now, let's connect the dots between our calculations and the robot's joint positions. Each of these intricate calculations - from the Law of Cosines to the determination of angles 'phi1', 'phi2', and 'phi3' - plays a pivotal role in pinpointing the exact location of each joint in the robot's leg. The x and y coordinates we calculated for the hip, knee, and foot joints - 'Xa', 'Ya', 'Xb', 'Yb', and so on - are more than just numbers; they represent the precise spatial coordinates where each joint should be positioned. By mapping these coordinates onto our robot, we can visualize and control the movement and articulation of each leg with incredible accuracy. This precise mapping is what allows our spider robot to move fluidly and respond accurately to our commands, making the journey from mathematical concepts to mechanical reality."
 
+[Visual: 3D Animation of Spider Robot’s Leg]
 
-[**Visual: Summary of Foot Joint Position Calculation**]
+Narrator: "With our calculations complete, it's time to bring our spider robot's leg to life in the virtual world. Let's see how we map out its joints in our code."
+
+[Visual: Highlighted Code Snippet]
+
+Narrator: "Here, we're creating a list that represents the locations of each joint in the leg. This list is the bridge between our mathematical calculations and the robot's physical structure."
+
+[Visual: Animation Showing Joint Locations Being Added to List]
+
+Narrator: "We start with the origin point, [0, 0, 0], the base from where our leg begins. Next, we add the coordinates of the coxa-femur joint, calculated earlier as 'Xa' and 'Ya'. This joint is crucial as it connects the leg to the robot's body."
+
+[Visual: Illustration of Coxa-Femur Joint with Coordinates]
+
+Narrator: "Then, we move to the femur-tibia joint, the robot's knee equivalent. By adding 'Xc' and 'Yc' to our initial coxa-femur coordinates, and including the vertical component 'G2', we locate this joint precisely in three-dimensional space."
+
+[Visual: Illustration of Femur-Tibia Joint with Coordinates]
+
+Narrator: "Lastly, the tip of the leg, the point that interacts with the ground. Its coordinates are determined by adding 'Xb' and 'Yb' to the coxa-femur coordinates and using 'G1' as its vertical position. This marks the endpoint of our leg's journey."
 
 **Narrator:** "And there you have it! By applying these trigonometric principles, we've precisely determined the position of our spider robot's foot joint."
 
