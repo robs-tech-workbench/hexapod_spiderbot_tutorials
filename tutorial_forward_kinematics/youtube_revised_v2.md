@@ -4,7 +4,7 @@
 
 [**Visual: Series Title and Disclaimer Slide**]
 
-**Narrator:** "Before we start, don't forget to check out our other tutorials in this series for a rounded understanding of the project. Each tutorial is crafted to build your skills, step by step. Find the complete series in the description below."
+**Narrator:** "Before we start, don't forget to check out my other tutorials in this series for a rounded understanding of the project. Each tutorial is crafted to build your skills, step by step. Find the complete series in the description below."
 
 [**Visual Transition: Opening Slide for Today's Tutorial**]
 
@@ -66,7 +66,7 @@ Narrator: "Finally, we calculate the x and y coordinates of the femur-tibia join
 
 [**Visual: Detailed Illustration of Spider Robot's Leg Joints**]
 
-**Narrator:** "Let's focus on the femur-tibia joint, a key point in our leg's movement. We calculate the straight-line distance from the femur-tibia joint to the tibia tip using the Law of co-signs."
+**Narrator:** "Let's focus on the femur-tibia joint, a key point in our leg's movement."
 
 [**Visual: Illustration of the Femur, Tibia, and Angles**]
 
