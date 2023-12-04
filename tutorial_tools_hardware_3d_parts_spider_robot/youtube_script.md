@@ -2,6 +2,7 @@
 
 The inception of this project can be traced back to a YouTube video from the 'Make Your Own Pet' series. This particular venture piqued my interest as an engaging and educational pastime during the long days of COVID-19 quarantines. To put it in short, the idea is to use a smartphone as the main controller for your hobby project. If you have questions or would like to become part of a community interested in similar projects, I recommend joining their discord or exploring their GitHub and YouTube channels.
 
+## Disclaimer
 **I am not affiliated** with any of the companies that manufacture the components used in this project. The links provided are not affiliate links and are included solely for informational purposes. The information is based on my personal experience and is intended for educational use. I strongly recommend conducting your own research and consulting various sources before making any purchasing decisions or implementing these components into your projects.
 
 
