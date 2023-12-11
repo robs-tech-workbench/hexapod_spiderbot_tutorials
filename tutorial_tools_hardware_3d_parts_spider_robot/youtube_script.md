@@ -62,12 +62,12 @@ Touch-sensitive micro switches act as leg sensors, providing crucial input for t
 The Servo 2040 - 18 Channel Servo Controller is the backbone for servo operations. Its firmware aligns with the 'Make Your Own Pet' project, and I've crafted a Python class for easy communication with the spider's 'brain.'
 
 
-#### Why This Controller is a Good Choice
-- **Versatile**: Supports up to 18 servos, ideal for complex robotics.
-- **Power Monitoring**: Built-in current tracking for optimized power use.
-- **Visual Feedback**: Six RGB LEDs for immediate status updates.
-- **Sensor Support**: Headers for six analog sensors for added functionalities.
-- **RP2040 Core**: Benefits from the flexibility of RP2040's Programmable IOs (PIOs).
+Why This Controller is a Good Choice?
+Well, It supports up to 18 servos, ideal for complex robotics.
+It has a Built-in current tracking for optimized power use.
+It provides Visual Feedback with Six RGB LEDs for immediate status updates.
+It supports up to six analog sensors for added functionalities.
+It Benefits from the flexibility of RP2040's Programmable IOs .
 
 ### The Spider Brain: Raspberry Pi 4 Model B
 
