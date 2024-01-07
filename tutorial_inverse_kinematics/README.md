@@ -5,7 +5,7 @@
 
 ## Inverse Kinematics for Spider Robot Legs
 
-Hello, fellow code explorers and welcome to the first episode of 'Robert Robo-Workshop'! I'm your host, Robert Meisner, and I'm thrilled to invite you on a captivating journey as we build a mesmerizing spider robot from scratch! 
+Hello, fellow code explorers and welcome to the next episode of 'Rob's Tech Workbench'! I'm your host, Robert Meisner, and I'm thrilled to invite you on a captivating journey as we build a mesmerizing spider robot from scratch! 
 
 Now, if you think that I'm new to this realm, you're absolutely right! This is my first time tackling such a complex robotics project from scratch, but worry not, because together we'll learn, grow, and overcome every challenge that comes our way. Throughout this series, we'll be diving into fascinating topics such as mechanical design, electronics, coding, and much more.
 
@@ -234,7 +234,8 @@ In this right-angled triangle, the legs along the X and Y axes have lengths x an
 We need to find the angle between the X-axis and the coxa, which we can call θ1. 
 To do this, we'll use the arctangent (atan) function, which is the inverse of the tangent function.
 
-Recall that the tangent function (tan) is the ratio of the length of the opposite side to the length of the adjacent side in a right-angled triangle. 
+
+To determine the actual angle, θ1, we use the arctangent function (often abbreviated as atan). This mathematical tool calculates the angle when you know the ratio of the opposite side's length to the adjacent side's length in a right-angled triangle. Essentially, it helps us figure out the steepness or incline angle based on the triangle's dimensions.
 In our case, the opposite side has a length of y, and the adjacent side has a length of x:
 $$tan(\theta1)=\frac{y}{x}$$
  
@@ -338,15 +339,12 @@ return ang
 To summarize, we've used trigonometric functions such as sine, cosine, and tangent, as well as the cosine rule, to calculate the joint angles required for our spider leg model to reach a specific target position. By understanding the relationships between the lengths and angles in right-angled triangles, we've been able to apply these principles to a more complex, three-dimensional problem.
 
 ## Resources and Links: GitHub Repository and 3D Fusion 360 Model
-In this tutorial, we've explored the basic concepts and mechanics of a simplified spider leg model using Python code and inverse kinematics. If you want to dive deeper into the topic or play around with the code and visualization, we've got you covered! 
+If you want to dive deeper into the topic or play around with the code and visualization, we've got you covered! 
 The complete Jupyter Notebook with all the code and visualizations we discussed today is available on our GitHub repository. You can find the link in the description below.
 
 In addition to the code, I've also created a detailed 3D model of the spider leg using Autodesk Fusion 360. 
 This model will help you better understand the structure, movement, and the various components we discussed in this tutorial. 
 You can access the 3D model through the link provided in the description below.
-
-Feel free to explore both the code and the 3D model to get a deeper understanding of the spider leg mechanics and inverse kinematics. 
-If you have any questions or suggestions, please leave a comment, and don't forget to like and subscribe for more exciting tutorials like this one. 
 
 Happy coding!
 
