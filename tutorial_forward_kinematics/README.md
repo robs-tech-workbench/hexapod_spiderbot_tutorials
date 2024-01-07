@@ -39,7 +39,9 @@ Let's get started!
 # The `forward_kinematics_naive` Method: A Deep Dive
 
 In this tutorial, we'll dissect the `forward_kinematics_naive` method from the `SpiderLeg` class in our spider robot project. This method is pivotal for calculating the positions of the leg's joints based on the joint angles. Here's a detailed breakdown of each step, complete with trigonometry explanations and inline code snippets.
-
+![Spider robot leg top view](media/top_view.png)
+![Spider robot leg side view](media/side_view.png)
+![Spider robot leg perspective](media/perspective.png)
 
 1. **Angle Conversion**:
    The method begins by converting the joint angles from degrees to radians. This conversion is essential as trigonometric functions in Python's math library require angles in radians.
