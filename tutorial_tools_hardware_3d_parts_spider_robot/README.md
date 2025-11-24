@@ -141,6 +141,45 @@ Choosing the correct wires is essential for both the functionality and safety of
 To convert the 7.4V from your battery to a stable 5V for the Raspberry Pi, a step-down buck module is essential. Opt for one that can deliver at least 3A of current. 
 [2A 5V Step Down Buck Module I have used on Aliexpress (you might need 3A)](https://www.aliexpress.com/item/4000084079149.html)
 ![5V Step Down Buck Module](media/step_down.png)
+
+---
+
+## ⚠️ CRITICAL: Power Safety Warning
+
+**When operating with both battery and USB connected, you MUST take precautions to prevent power backfeed damage.**
+
+### The Risk
+Connecting battery power and USB power simultaneously without proper precautions can cause **permanent hardware damage** to your:
+- Raspberry Pi (power management IC failure)
+- Servo 2040 (power transistor failure, can create USB short circuit)
+- Computer/laptop (via USB backfeed)
+
+### Required Safety Measures
+
+You **MUST** use one of these solutions when connecting battery and USB at the same time:
+
+1. **Use a data-only USB cable** (recommended for development)
+   - This is a USB cable with the power pins (VBUS/GND for power) disconnected
+   - Allows programming and communication without power backfeed risk
+   - Essential when programming a battery-powered robot through USB
+
+2. **Cut the "Separate USB and Ext. Power" trace** on the Servo 2040 back
+   - This physically separates USB power from external battery power on the board
+   - See the [Servo 2040 product page](https://shop.pimoroni.com/products/servo-2040) for details
+   - Permanent modification - recommended only if you always use external power
+
+### Important Notes
+- The Servo 2040 official documentation includes this critical warning that must not be ignored
+- **Never connect both battery and standard USB simultaneously** without one of the above precautions
+- When in doubt, disconnect the battery before connecting USB for programming
+- For production use, choose your power source: battery OR USB, not both
+
+⚠️ **Failure to follow these precautions can result in expensive equipment damage within minutes.**
+
+For more information, refer to the official [Servo 2040 documentation](https://shop.pimoroni.com/products/servo-2040).
+
+---
+
 ### USB Cables
 
 Two types of USB cables are needed:
