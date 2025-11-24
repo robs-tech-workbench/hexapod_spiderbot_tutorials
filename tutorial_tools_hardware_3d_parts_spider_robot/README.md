@@ -151,7 +151,7 @@ To convert the 7.4V from your battery to a stable 5V for the Raspberry Pi, a ste
 ### The Risk
 Connecting battery power and USB power simultaneously without proper precautions can cause **permanent hardware damage** to your:
 - Raspberry Pi (power management IC failure)
-- Servo 2040 (power transistor failure, can create USB short circuit)
+- Servo 2040 (power transistor failure, can cause voltage feedback or overcurrent conditions)
 - Computer/laptop (via USB backfeed)
 
 ### Required Safety Measures
@@ -159,7 +159,7 @@ Connecting battery power and USB power simultaneously without proper precautions
 You **MUST** use one of these solutions when connecting battery and USB at the same time:
 
 1. **Use a data-only USB cable** (recommended for development)
-   - This is a USB cable with the power pins (VBUS/GND for power) disconnected
+   - This is a USB cable with the VBUS (+5V power) pin disconnected while keeping data and ground pins connected
    - Allows programming and communication without power backfeed risk
    - Essential when programming a battery-powered robot through USB
 
