@@ -1,3 +1,5 @@
+Read the companion tutorial on [Catch IT](https://catchit.pl/): [Calibrating Hexapod Servos with a Servo Tester](https://catchit.pl/blog/calibrating-hexapod-servos-with-a-servo-tester/).
+
 > **Disclaimer:** This tutorial is part of a comprehensive series that I've created to guide you through the process of building a spider robot. Each tutorial in the series is designed to cover a specific aspect of the project, providing detailed instructions and insights to help you understand and replicate the steps.
 > 
 > You can find the entire series [here](../README.md). I encourage you to explore all the tutorials in the series to gain a complete understanding of the project. Whether you're a beginner or an expert, I hope you find these resources helpful and informative. Happy building!
