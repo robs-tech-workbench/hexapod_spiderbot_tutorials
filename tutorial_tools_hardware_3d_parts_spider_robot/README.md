@@ -1,3 +1,5 @@
+Read the companion tutorial on [Catch IT](https://catchit.pl/): [Building a Hexapod: Tools, Hardware and 3D-Printed Parts](https://catchit.pl/blog/hexapod-build-guide-tools-hardware-and-3d-printed-parts/).
+
 # Spider Robot Building Guide: Tools, Hardware Components, and 3D Printed Parts
 
 > **Disclaimer:** This guide is a part of an extensive series focused on constructing a spider robot from scratch. Each installment targets a specific topic to provide you with a comprehensive understanding of the entire process. Whether you are a beginner or an expert in robotics, these resources aim to be both insightful and instructive. Happy building! To access the full series, click [here](../README.md).
