@@ -1,5 +1,19 @@
 # Spider Robot Tutorials
 
+## Tutorials on Catch IT
+
+Read the companion articles on [Catch IT — Robert Meisner's website](https://catchit.pl/). These link back to the source code and include build context, tests and limitations.
+
+- [Building My 3D-Printed Hexapod](https://catchit.pl/blog/building-3d-printed-hexapod-spider-robot/)
+- [How the Hexapod Control Layers Fit Together](https://catchit.pl/blog/hexapod-servo-calibration-forward-inverse-kinematics/)
+- [Building a Hexapod: Tools, Hardware and 3D-Printed Parts](https://catchit.pl/blog/hexapod-build-guide-tools-hardware-and-3d-printed-parts/)
+- [Calibrating Hexapod Servos with a Servo Tester](https://catchit.pl/blog/calibrating-hexapod-servos-with-a-servo-tester/)
+- [Controlling a Hexapod with a HID Gamepad](https://catchit.pl/blog/controlling-a-hexapod-with-a-hid-gamepad/)
+- [Inverse Kinematics for a Hexapod Leg](https://catchit.pl/blog/inverse-kinematics-for-a-hexapod-leg/)
+- [Forward Kinematics for a Hexapod Leg](https://catchit.pl/blog/forward-kinematics-for-a-hexapod-leg/)
+- [Controlling One Hexapod Leg](https://catchit.pl/blog/controlling-one-hexapod-leg/)
+
+
 Welcome to the Spider Robot Tutorials repository! This collection of tutorials is designed to help you build, program, and control a hexapod robot. We'll cover everything from the basics of robot mechanics and design to more advanced topics like inverse kinematics and control algorithms. Whether you're a beginner or a seasoned roboticist, there's something here for everyone.
 [![Watch the video](media/youtube_splash.png)](https://youtu.be/toPMHUULjyc)
 ![Hexapod robot spider](media/robot.png)
