@@ -97,7 +97,7 @@ The configuration file for the spider robot is a JSON file that includes essenti
 
 The `servos` key is an array that contains detailed configuration for each servo motor used in the robot. The servos are identified by their `pin` numbers. The `angle_range` key holds the minimum and maximum angles the servo can rotate. The `reverse` key specifies if the direction of the servo needs to be reversed.
 
-The `calibration_data` is the critical aspect for our tutorial. It's an array of four values: the minimum and maximum PWM signals that correspond to the minimum and maximum angles defined in `angle_range`. These values are crucial for mapping PWM signals to specific angles, which we'll use later to control the servos accurately. 
+The `calibration_data` is the critical aspect for our tutorial. It's an array of four values: the minimum and maximum PWM signals, followed by the angles those pulses correspond to. Together they define the linear mapping between PWM signals and angles, which we'll use later to control the servos accurately. 
 
 The `offset` key holds the value of the deviation from the zero position, which can be added or subtracted to adjust the servo's zero position due to mechanical misalignments.
 
@@ -123,6 +123,6 @@ Here's what's being plotted in the previous code:
 
 The pulse_widths and angles lists represent the actual measured response of the servo. The plt.plot(pulse_widths, angles, marker='o') line plots these values as blue dots on the graph.
 
-The pulse_width_range and angle_range lists represent the expected linear response of the servo, based on the assumption that the servo moves 90 degrees when the pulse width changes by 400 µs. The plt.plot(pulse_width_range, angle_range, '--', color='gray') line plots this expected response as a dashed gray line on the graph.
+The pulse_width_range and angle_range lists represent the expected linear response of the servo, based on the assumption that the servo moves 90 degrees when the pulse width changes by 500 µs. The plt.plot(pulse_width_range, angle_range, '--', color='gray') line plots this expected response as a dashed gray line on the graph.
 
 By comparing the actual response to the expected linear response, you can see how much your servo deviates from the expected behavior. If the blue dots fall on the gray line, your servo behaves exactly as expected. If the blue dots deviate from the gray line, it means your servo doesn't move at a constant rate, and you might need to take this into account in your project.

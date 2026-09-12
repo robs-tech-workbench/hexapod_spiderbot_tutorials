@@ -187,13 +187,11 @@ class GamepadController:
         return angle, inclination
 
     @staticmethod
-    def print_raw_data(gamepad, vendor_id=0x1209, product_id=0x4f54):
+    def print_raw_data(gamepad):
         """
         Read and print a raw report from the game controller.
-        
+
         :param gamepad: HID device representing the game controller
-        :param vendor_id: vendor ID of the device
-        :param product_id: product ID of the device
         """
         # Set the gamepad to non-blocking mode, then read a report from it.
         gamepad.set_nonblocking(True)

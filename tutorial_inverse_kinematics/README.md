@@ -2,7 +2,7 @@ Read the companion tutorial on [Catch IT](https://catchit.pl/): [Inverse Kinemat
 
 > **Disclaimer:** This tutorial is part of a comprehensive series that I've created to guide you through the process of building a spider robot. Each tutorial in the series is designed to cover a specific aspect of the project, providing detailed instructions and insights to help you understand and replicate the steps.
 > 
-> You can find the entire series [here](../README.md). I encourage you to explore all the tutorials in the series to gain a complete understanding of the project. Whether you're following along to build your own spider robot, or simply interested in learning more about robotics, I hope you find these resources helpful and informative. Happy building!"
+> You can find the entire series [here](../README.md). I encourage you to explore all the tutorials in the series to gain a complete understanding of the project. Whether you're following along to build your own spider robot, or simply interested in learning more about robotics, I hope you find these resources helpful and informative. Happy building!
 
 
 ## Inverse Kinematics for Spider Robot Legs
@@ -38,7 +38,7 @@ The community behind the project is supportive and can help you through any chal
 
 Before we get started, make sure you have a basic understanding of the following concepts:
 
-1. High school trigonometry (projectiona, sine, cosine, tangent, and their inverse functions)
+1. High school trigonometry (projections, sine, cosine, tangent, and their inverse functions)
 2. Coordinate systems (Cartesian and polar)
 3. Vectors and vector operations
 4. Basic programming concepts (variables, functions, loops, and conditional statements)
@@ -60,7 +60,7 @@ Now that we have a basic understanding of inverse kinematics, let's dive into th
 1. Store the leg's joint angles and segment lengths (coxa, femur, and tibia)
 2. Calculate the inverse kinematics to determine the joint angles required to reach a target position
 3. Calculate the forward kinematics to determine the end effector position given the joint angles
-4. Validate and normalize joint angles to ensure they are within the leg's range of motion
+4. Normalize joint angles to the [-180, 180] degree range
 
 
 ```python
@@ -133,7 +133,7 @@ By calculating Xa and Ya, we can determine the starting point of the femur segme
 Xb and Yb are the horizontal and vertical distances from the end of the COXA segment to the target point (x, y) in the X/Y plane.
 
 Now let's move on to the side view, where we can better understand the roles of θ2, θ3, and the other variables.
-![theta2  and 3 from the top view](media/side_view.png)
+![Side view of the spider leg](media/side_view.png)
 In the side view, we can further analyze the relationship between θ2, θ3, and the leg segments, along with the auxiliary variables H, G, P, phi1, phi2, and phi3.
 First, let's look at H, G, and P. 
 
@@ -151,7 +151,7 @@ I chose the angles phi1, phi2, and phi3 to assist in calculating the theta angle
 It's important to note that you can choose other angles or methods to calculate the theta angles, depending on your specific problem or the way you want to approach the inverse kinematics. The key is to find an approach that makes the calculations more straightforward and easier to understand.
 In our case, we used phi1, phi2, and phi3 because they allowed us to form right-angled triangles and apply trigonometric functions like sine, cosine, and tangent. This made it easier to calculate the required joint angles for the spider leg. Remember, the goal is to find an approach that works for your specific problem and makes the calculations more manageable.
 
-![Top view of the spider leg](media/side_view_target_above_coxa.png)
+![Side view with the target above the coxa](media/side_view_target_above_coxa.png)
 From the side view, we can observe how θ2 and θ3 control the leg's vertical position and extension. 
 θ2 is primarily responsible for the leg's vertical movement, while θ3 controls the leg's extension or retraction in relation to the femur. 
 By understanding the relationships between these angles and the auxiliary variables, we can gain a deeper insight into the spider leg's kinematics and the role of inverse kinematics in achieving the desired leg positions.
@@ -223,7 +223,7 @@ $$B = arccos(\frac{a^2 + c^2 - b^2}{2ac})$$
 Since the sum of the angles in a triangle is always 180 degrees, you can find angle C:
 $$C = 180^{\circ} - A - B$$
 
-## Inverse Kinematics: Calculation Proces
+## Inverse Kinematics: Calculation Process
 In this tutorial, we use two sets of symbols: theta (θ) and phi (φ). 
 Both symbols represent angles, but they have different roles in the context of our leg kinematics.
 
@@ -242,9 +242,9 @@ In our case, the opposite side has a length of y, and the adjacent side has a le
 $$tan(\theta1)=\frac{y}{x}$$
  
 To find the actual angle, θ1, we need to use the inverse tangent function, also known as arctangent (atan). The arctangent function helps you find the angle when you know the tangent value. 
-So, in our right-angled triangle with legs x and y, the atan(y/x) gives the angle θ1 between the X-axis and the coxa:
+So, in our right-angled triangle with legs x and y, atan2(y, x) gives the angle θ1 between the X-axis and the coxa. Unlike plain atan(y/x), atan2 also keeps track of the quadrant and works when x is zero:
 ```python
-theta1 = atan(y / x)
+theta1 = atan2(y, x)
 ```
 This calculation gives us the horizontal orientation of the leg, which is an essential first step in determining the joint angles for inverse kinematics.
 
@@ -267,9 +267,9 @@ Rearranging the equation, we get:
 $$hypotenuse (P) = \frac{adjacent (Xb)}{cos(\theta1)}$$
 Thus, the code:
 ```python
-P = Xb / cos(theta1)
+P = sqrt(Xb ** 2 + Yb ** 2)
 ```
-calculates the hypotenuse P, which is the horizontal distance from the end of the coxa to the target point in the horizontal plane.
+calculates the hypotenuse P by the Pythagorean theorem — the same value as Xb / cos(θ1), but numerically stable also when the leg points straight along the Y axis and cos(θ1) is zero. P is the horizontal distance from the end of the coxa to the target point in the horizontal plane.
 
 G is the absolute value of the z-coordinate of the target position. 
 It represents the vertical distance between the coxa-femur joint and the target position along the z-axis.
@@ -312,11 +312,11 @@ With the φ1, φ2, and φ3 values calculated, we can now determine θ2 and θ3 b
 **When the leg is lifted above the coxa (z > 0):**
 In this case, the target position is above the coxa-femur joint along the z-axis. To reach this position, the leg needs to bend backward, which means theta2 should be positive. To calculate the correct value of theta2, we need to consider both phi1 and phi3. Since both angles are positive, we add them together:
 theta2 = phi1 + phi3
-![Top view of the spider leg](media/side_view_target_above_coxa.png)
+![Side view with the target above the coxa](media/side_view_target_above_coxa.png)
 **When the leg is lowered below the coxa (z ≤ 0):**
 In this case, the target position is below the coxa-femur joint along the z-axis. To reach this position, the leg needs to bend forward, which means theta2 should be negative or smaller than phi1. To calculate the correct value of theta2, we need to consider the effect of phi3. Since phi3 is positive, we subtract it from phi1:
 theta2 = phi1 - phi3
-![Top view of the spider leg](media/side_view.png)
+![Side view of the spider leg](media/side_view.png)
 ```python
 if z > 0:
     theta2 = phi1 + phi3

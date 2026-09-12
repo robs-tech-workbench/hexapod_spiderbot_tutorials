@@ -12,7 +12,7 @@ This repository includes a [Jupyter Notebook](forward_kinematics.ipynb) that con
 
 Welcome, coding enthusiasts and aspiring roboticists! My goal is to document my journey of building a spider robot in the form of short but detailed tutorials. These tutorials will be easy for everyone to follow, packed with code examples and thorough explanations. Whether you're a seasoned coder or a beginner just starting out, I believe these guides will be a valuable resource in your learning journey. 
 
-Today, in this installment of our exciting series on building a spider robot, we're going to delve into a vital aspect of robot motion planning - the forward kinematics method. Specifically, we'll be exploring the `forwardKinematicsNaive` method in our `SpiderLeg` class.
+Today, in this installment of our exciting series on building a spider robot, we're going to delve into a vital aspect of robot motion planning - the forward kinematics method. Specifically, we'll be exploring the `forward_kinematics_naive` method in our `SpiderLeg` class.
 
 # Forward Kinematics in Robotics
 
@@ -107,7 +107,7 @@ In this tutorial, we'll dissect the `forward_kinematics_naive` method from the `
 
    - `P2` is the horizontal distance between the femur-tibia joint and the tibia-tip joint. It is calculated as the difference between `Pp` and `P1`.
 
-     ```
+     ```python
      P2 = Pp - P1
      ```
 

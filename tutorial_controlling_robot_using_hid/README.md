@@ -85,17 +85,18 @@ With the ability to read the state of the game controller, you can now use this 
 
 ```python
 while True:
-    # Read the controller state
+    # Read the controller state (returns None when no new report is available)
     controller_state = controller.read_controller()
-    
-    # Get the state of the throttle and yaw channels
-    throttle = controller_state.get('throttle')
-    yaw = controller_state.get('yaw')
-    
-    # Use the throttle and yaw values to control the robot
-    robot.move_forward(throttle)
-    robot.turn(yaw)
-    
+
+    if controller_state:
+        # Get the state of the throttle and yaw channels
+        throttle = controller_state.get('throttle')
+        yaw = controller_state.get('yaw')
+
+        # Use the throttle and yaw values to control the robot
+        robot.move_forward(throttle)
+        robot.turn(yaw)
+
     # Wait a short period of time before the next iteration
     time.sleep(0.1)
 ```

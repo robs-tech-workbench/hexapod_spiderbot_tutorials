@@ -97,7 +97,7 @@ class HardwareController:
         else:
             raise ValueError(f"Servo with pin {pin} not found")
     def send_get_sensors(self, start_index, values):
-        raise NotImplementedError("send_set_command() method must be implemented in the derived class")
+        raise NotImplementedError("send_get_sensors() method must be implemented in the derived class")
     
     def send_set_command(self, start_index, values):
         raise NotImplementedError("send_set_command() method must be implemented in the derived class")
@@ -118,7 +118,7 @@ class HardwareController:
         raise NotImplementedError("close() method must be implemented in the derived class")
         
     def update(self):
-        raise NotImplementedError("close() method must be implemented in the derived class")
+        raise NotImplementedError("update() method must be implemented in the derived class")
         
     def set_servos_angles(self,spider):
         servo_angles = []
@@ -149,16 +149,16 @@ class HardwareController:
 class ChicaController(HardwareController):
     def __init__(self, config_file="servo_config.json"):
         super().__init__(config_file)
-        self.touch_treshold = 50
+        self.touch_threshold = 50
         if os.path.exists(self.port):
             self.ser = serial.Serial(self.port, baudrate=115200, timeout=1)
             self.queue = deque()
             self.read_event = threading.Event()
+            self.receivedValues = {}
             print("Connected to Chica Controller")
             self.read_thread = threading.Thread(target=self.read_from_server)
             self.read_thread.daemon = True
             self.read_thread.start()
-            self.receivedValues={}
         else:
             raise Exception("Chica server connection failed")
     def servos_enabled(self, enable: bool):
@@ -204,7 +204,7 @@ class ChicaController(HardwareController):
         vals=[]
         touchSensorsPins=(18,19,20,21,22,23)
         for _,i in enumerate(touchSensorsPins):
-            vals.append(self.receivedValues.get(i,0)>self.touch_treshold)
+            vals.append(self.receivedValues.get(i,0)>self.touch_threshold)
         return vals
     def get_received_data(self, timeout=0.01):
         start_time = time.time()

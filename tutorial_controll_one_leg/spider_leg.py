@@ -1,5 +1,4 @@
-from math import degrees, radians, cos, sin, sqrt, acos, atan,asin
-import numpy as np
+from math import degrees, radians, cos, sin, sqrt, asin, acos, atan2
 
 class SpiderLeg:
     def __init__(self, name, COXA, FEMUR, TIBIA):
@@ -72,8 +71,9 @@ class SpiderLeg:
         x, y, z = target[0], target[1], target[2]
 
         # Calculate theta1 using arctangent (tan^-1) based on x and y coordinates
-        # arctan(y/x) gives the angle of a right-angled triangle with legs x and y
-        theta1 = atan(y / x)
+        # atan2(y, x) gives the angle of a right-angled triangle with legs x and y;
+        # unlike plain atan(y/x), it also keeps track of the quadrant and works when x is zero
+        theta1 = atan2(y, x)
 
         # Calculate intermediate values for theta2 and theta3
         # Here, we apply trigonometric rules to find the lengths of the sides of the triangles
@@ -84,8 +84,11 @@ class SpiderLeg:
         Xb = x - Xa
         Yb = y - Ya
 
-        # Divide Xb by cos(theta1) to find P (projection of Xb on the x-axis)
-        P = Xb / cos(theta1)
+        # P is the hypotenuse of the right-angled triangle with legs Xb and Yb:
+        # the horizontal distance from the end of the coxa to the target point.
+        # Computed with the Pythagorean theorem so it stays accurate also when
+        # the leg points straight along the Y axis (cos(theta1) == 0)
+        P = sqrt(Xb ** 2 + Yb ** 2)
 
         # Calculate the absolute value of z, which will be used in the calculation of H
         G = abs(z)

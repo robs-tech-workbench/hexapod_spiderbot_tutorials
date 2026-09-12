@@ -1,0 +1,12 @@
+# Dependencies for the Jupyter notebooks and scripts in these tutorials
+jupyter
+ipympl
+numpy
+matplotlib
+opencv-python
+
+# HID gamepad communication (provides the `hid` module)
+hidapi
+
+# Serial communication with the servo controller
+pyserial
