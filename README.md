@@ -35,7 +35,7 @@ Welcome to the Spider Robot Tutorials repository! This collection of tutorials i
 To get started with the Spider Robot Tutorials, simply clone this repository or download the tutorials as a ZIP file. Each tutorial folder contains a README.md file, which serves as the main tutorial document. Follow the instructions provided in the README.md files, and you'll be on your way to building and programming your own hexapod robot!
 
 ## Contributing
-We welcome contributions to the Hexapod Robotics Tutorials repository! If you have a new tutorial idea, an improvement to an existing tutorial, or any other suggestions, please feel free to open an issue or submit a pull request.
+We welcome contributions to the Hexapod Robotics Tutorials repository! If you have a new tutorial idea, an improvement to an existing tutorial, or any other suggestions, please feel free to open an issue or submit a pull request. Notable changes to this repository are tracked in [CHANGELOG.md](CHANGELOG.md).
 
 ## License
 The content in this repository is licensed. For more information about the license terms and conditions, please refer to the [LICENSE](LICENSE) file in this repository.
